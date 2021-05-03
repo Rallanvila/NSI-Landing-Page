@@ -1,0 +1,40 @@
+// Imports==========================================
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
+@import "reset";
+@import "settings";
+@import "grid";
+
+
+.header{
+    position: relative;
+    height: 600px;
+    width: 100%;
+    @include bgCover();
+    background-image: url("https://images.pexels.com/photos/40753/military-raptor-jet-f-22-airplane-40753.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    .overlay{
+        @include overlay(#000000, .5)
+    }
+    .nav{
+        @include flexContainer(row, space-between, center);
+        padding: 20px 30px;
+        color: $white;
+        .nav__links{
+            .fas{
+                color: $white;
+            }
+            .nav__links--link{
+                color: $white;
+                margin: 0 20px;
+
+            }
+            .contact{
+                background: rgba($color: #fefefe, $alpha: 0.4);
+                padding: 10px 15px;
+                border-radius: 10px;
+                
+            }
+        }
+    }
+
+}
+
