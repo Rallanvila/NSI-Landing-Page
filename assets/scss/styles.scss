@@ -7,7 +7,7 @@
 
 .header{
     position: relative;
-    height: 600px;
+    height: 630px;
     width: 100%;
     @include bgCover();
     background-image: url("https://images.pexels.com/photos/40753/military-raptor-jet-f-22-airplane-40753.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
@@ -34,10 +34,6 @@
                     border-bottom: 2px solid white;
 
                 }
-                // &.nav__links--link-underline{
-                
-                // }
-
             }
             .contact{
                 background: rgba($color: #fefefe, $alpha: 0.4);
@@ -48,5 +44,111 @@
         }
     }
 
+}
+.values{
+    @include flexContainer(center, center, center);
+    padding: 20px 40px;
+    border-bottom: 1px solid $color-bg;
+    .values__img{
+        height: 100px;
+        padding: 0px 50px;
+
+    }
+    .fas{
+        font-size: 3rem;
+        color: #2C51A0;
+    }
+    .star{
+        height: 60px;
+    }
+}
+.whyNSI{
+    @include flexContainer(row, flex-start, center)
+    width: 100%;
+    margin: 100px 0;
+    padding: 0px 50px;
+    display: flex;
+    height: 550px;
+    .whyNSI__left{
+        width: 50%;
+        .whyNSI__left--title{
+            text-transform: capitalize;
+            font-weight: 600;
+            padding-bottom: 25px;
+        }
+        .whyNSI__left--details{
+            width: 80%;
+            opacity: .5;
+        }
+    }
+    .whyNSI__right{
+        display: flex;
+        align-items: center;
+        width: 50%;
+        .whyNSI__right--img{
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+}
+.mission{
+    @include flexContainer(column, center, center);
+    @include bgCover;
+    margin-bottom: 100px;
+    .mission__title{
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    .mission__details{
+        text-align: center;
+        opacity: .5;
+        margin-bottom: 30px;
+    }
+    .mission__buttons{
+        margin: 30px 20px;
+        .mission__buttons--btn{
+            margin: 0px 5px;
+            padding: 15px;
+            background: #2C51A0;
+            border-radius: 5px;
+            text-decoration: none;
+            color: $white;
+            &.clear{
+                color: #2C51A0;
+                background: none;
+                border: 2px solid rgba($color: #000000, $alpha: 0.5);
+            }
+        }
+    }
+}
+
+.footer{
+    @include flexContainer(column, center, center);
+    background: #2C51A0;
+    color: $white;
+    padding: 50px;
+    width: 100%;
+    .footer__top{
+        width: 100%;
+        @include flexContainer(row, space-between, flex-start);
+        padding: 50px 0;
+        border-bottom: 1px solid rgba($color: #fefefe, $alpha: .3);
+        .footer__top--section{
+            width: 25%;
+            .footer__top--section-header{
+                font-weight: 600;
+                margin-bottom: 10px;
+                opacity: 1;
+            }
+            a{
+                display: block; 
+                color: $white;
+                opacity: .8;
+                font-weight: 300;
+                padding-bottom: 5px;
+            }
+        }
+    }
 }
 
