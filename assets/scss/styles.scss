@@ -110,7 +110,7 @@
         margin: 30px 20px;
         .mission__buttons--btn{
             margin: 0px 5px;
-            padding: 15px;
+            padding: 10px 15px;
             background: #2C51A0;
             border-radius: 5px;
             text-decoration: none;
@@ -170,6 +170,50 @@
     .contact__header{
         color: #232a39;
         padding: 30px 0 20px;
+    }
+    .contact__form{
+        margin-top: 50px;
+        max-width: 1200px;
+        min-width: 50%;
+        position: relative;
+        .contact__form-row{
+            width: 100%;
+            display: flex;
+            .contact__form-row--input{
+                width: 100%;
+                margin: 25px 0;
+                position: relative;
+                label{
+                    display: block;
+                    padding-bottom: 5px;
+                }
+                input, select{
+                    width: 90%;
+                    padding: 10px;
+                    border-radius: 5px;
+                    border: none;    
+                }
+            }
+            
+        }
+        .submit-btn{
+            margin-top: 25px;
+            width: unset;
+            padding: 15px 20px;
+            background: #161A22;
+            color: $white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        a, p{
+            margin-top: 15px;
+            font-size: .8rem;
+            text-align: start;
+        }
+        a{
+            text-decoration: underline;
+        }
     }
 }
 
