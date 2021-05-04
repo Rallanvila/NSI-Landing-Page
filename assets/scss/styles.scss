@@ -162,61 +162,111 @@
 .careers{
     width: 100%;
     height: 400px;
-    padding: 50px;
+    margin: 50px 0;
+    padding: 50px 50px 50px 0;
     display: flex;
     .careers__left{
-        @include flexContainer(column, center, center)
+        @include flexContainer(column, flex-end, center)
         width: 60%;
-        .careers__employee-container{
-            width: 493px;
-            height: 192px;
-            display: flex;
-            align-items: center;
-            border: 1px solid rgba(128, 128, 128, 0.495);
-            border-radius: 5px;
-            -webkit-box-shadow: -6px 8px 19px 1px rgba(0,0,0,0.76); 
-            box-shadow: -6px 8px 19px 1px rgba(0,0,0,0.76);
-            &.allan{
-                z-index: 20;
-            }
-            .careers__employee{
-                padding: 20px;
-                height: 100%;
-                border-radius: 28px;
-            }
-            .careers__employee-details--name{
-                font-weight: 600;
-                padding-bottom: 10px;
-            }
-            .careers__employee-details--title{
-                padding-bottom: 5px;
-                opacity: .5;
-            }
-            .careers__employee-details--location{
-                font-weight: 600;
-                padding-bottom: 5px;
-                font-size: 0.9rem;
-            }
-            .careers__employee-details--review{
-                padding-bottom: 5px;
-                font-size: 0.9rem;
-                opacity: .5;
-                .fas{
-                    color: red;
-                }
-            }
-            .careers__employee-details--bubbles{
-                padding-top: 5px;
+        .careers__employee-relative-container{
+            position: relative;
+            .careers__employee-container{
+                width: 493px;
+                height: 192px;
                 display: flex;
-                .bubbles--green{
-                    width: 140px;
+                align-items: center;
+                border: 1px solid rgba(128, 128, 128, 0.495);
+                border-radius: 5px;
+                -webkit-box-shadow: -6px 8px 19px 1px rgba(0,0,0,0.76); 
+                box-shadow: -6px 8px 19px 1px rgba(0,0,0,0.76);
+                z-index: 20;
+                background: $white;
+                &.front{
+                    z-index: 0;
+                    position: absolute;
+                    bottom: 130px;
+                    left: 70px;
                 }
-                .bubbles--red{
-                    width: 200px;
-                    padding-left: 10px;
+                .careers__employee{
+                    padding: 20px;
+                    height: 100%;
+                    border-radius: 28px;
+                    z-index: 0;
+                    &.front{
+                        z-index: 20;
+                    }
                 }
+                .careers__employee--front{
+                    padding: 20px;
+                    height: 100%;
+                    border-radius: 28px;
+                    z-index: 0;
+                }
+                .careers__employee-details--name{
+                    font-weight: 600;
+                    padding-bottom: 10px;
+                    z-index: 20;
+                       &.front{
+                        z-index: 0;
+                    }
+                }
+                .careers__employee-details--title{
+                    padding-bottom: 5px;
+                    opacity: .5;
+                    z-index: 20;
+                       &.front{
+                        z-index: 0;
+                    }
+                }
+                .careers__employee-details--location{
+                    font-weight: 600;
+                    padding-bottom: 5px;
+                    font-size: 0.9rem;
+                    z-index: 20;
+                       &.front{
+                        z-index: 0;
+                    }
+                }
+                .careers__employee-details--review{
+                    padding-bottom: 5px;
+                    font-size: 0.9rem;
+                    opacity: .5;
+                    z-index: 20;
+                       &.front{
+                        z-index: 0;
+                    }
+                    .fas{
+                        z-index: 20;
+                        color: red;
+                           &.front{
+                        z-index: 0;
+                    }
+                    }
+                }
+                .careers__employee-details--bubbles{
+                    z-index: 20;
+                    padding-top: 5px;
+                    display: flex;
+                       &.front{
+                        z-index: 0;
+                    }
+                    .bubbles--green{
+                        width: 140px;
+                           &.front{
+                        z-index: 0;
+                    }
+                    }
+                    .bubbles--red{
+                        z-index: 20;
+                        width: 200px;
+                        padding-left: 10px;
+                           &.front{
+                        z-index: 0;
+                    }
+                    }
+                }
+    
             }
-
         }
     }
     .careers__right{
