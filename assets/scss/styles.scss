@@ -55,6 +55,8 @@
     @include flexContainer(center, center, center);
     padding: 20px 40px;
     border-bottom: 1px solid $color-bg;
+    margin: 0 auto;
+    max-width: 1200px;
     .values__img{
         height: 100px;
         padding: 0px 50px;
@@ -71,10 +73,12 @@
 .whyNSI{
     @include flexContainer(row, flex-start, center)
     width: 100%;
-    margin: 100px 0;
+    margin: 100px auto;
     padding: 0px 50px;
     display: flex;
     height: 550px;
+    max-width: 1300px;
+
     .whyNSI__left{
         width: 50%;
         .whyNSI__left--title{
