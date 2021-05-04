@@ -36,9 +36,15 @@
                 }
             }
             .contact-btn{
+                color: $white;
+                margin: 0 20px;
                 background: rgba($color: #fefefe, $alpha: 0.4);
                 padding: 10px 15px;
                 border-radius: 10px;
+                transition: all .4s ease-in-out;
+                &:hover{
+                    background: darken($color: #161A22, $amount: 10%)
+                }
                 
             }
         }
@@ -111,14 +117,18 @@
         .mission__buttons--btn{
             margin: 0px 5px;
             padding: 10px 15px;
-            background: #2C51A0;
+            background: rgb(22, 26, 34);
             border-radius: 5px;
             text-decoration: none;
             color: $white;
+            transition: all .3s ease-in-out;
+            &:hover{
+                background: lighten($color: #32363D, $amount: 10%)
+            }
             &.clear{
-                color: #2C51A0;
+                color: #32363D;
                 background: none;
-                border: 2px solid rgba($color: #000000, $alpha: 0.5);
+                border: 2px solid rgba($color: #32363D, $alpha: 0.5);
             }
         }
     }
@@ -284,6 +294,10 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: all .3s ease-in-out;
+            &:hover{
+                background: lighten($color: #32363D, $amount: 10%)
+            }
         }
 
     }
@@ -329,11 +343,16 @@
             margin-top: 25px;
             width: unset;
             padding: 15px 20px;
+            font-size: 1rem;
             background: #161A22;
             color: $white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: all .3s ease-in-out;
+            &:hover{
+                background: lighten($color: #32363D, $amount: 10%)
+            }
         }
         a, p{
             margin-top: 15px;
