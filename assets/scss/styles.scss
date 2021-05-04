@@ -123,9 +123,14 @@
     }
 }
 .our-team{
-    @include flexContainer(row, center, center);
+    @include flexContainer(column, center, center);
     width: 100%;
     height: 800px;
+    h2{
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-bottom: 30px;
+    }
     .our-team__container{
         @include flexContainer(row, flex-start, flex-start);
         flex-wrap: wrap;
