@@ -1,0 +1,98 @@
+.header{
+    position: relative;
+    height: 630px;
+    width: 100%;
+    @include bgCover();
+    background-image: url("https://images.pexels.com/photos/40753/military-raptor-jet-f-22-airplane-40753.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    .overlay{
+        @include overlay(#000000, .5)
+    }
+    .nav{
+        @include flexContainer(row, space-between, center);
+        padding: 20px 30px;
+        color: $white;
+        .nav__links{
+            z-index: 4;
+            .fas{
+                color: white;
+                margin: 0 20px;
+            }
+            .fa-bars{
+                display: none;
+            }
+            .nav__links--link{
+                color: $white;
+                margin: 0 20px;
+                padding-bottom: 5px;
+                border-bottom: 2px solid rgba($color: #fefefe, $alpha: 0);
+                transition: all .5s ease-in-out;
+                &:hover{
+                    border-bottom: 2px solid white;
+
+                }
+            }
+            .contact-btn{
+                color: $white;
+                margin: 0 20px;
+                background: rgba($color: #fefefe, $alpha: 0.4);
+                padding: 10px 15px;
+                border-radius: 10px;
+                transition: all .4s ease-in-out;
+                &:hover{
+                    background: darken($color: #161A22, $amount: 10%)
+                }
+                
+            }
+        }
+    }
+
+}
+@media only screen and (max-width: 1220px){
+    .header{
+        .nav{
+            .nav__links{
+                .nav__links--link{
+                    margin: 0 5px;
+                }
+                .fas{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 950px){
+    .header{
+        background-position: left;
+        .nav{
+            .nav__links{
+                .nav__links--link, .fas, .contact-btn{
+                    display: none;
+                }
+                .fa-bars{
+                    display: flex;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
+.values{
+    @include flexContainer(center, center, center);
+    padding: 20px 40px;
+    border-bottom: 1px solid $color-bg;
+    margin: 0 auto;
+    max-width: 1200px;
+    .values__img{
+        height: 100px;
+        padding: 0px 50px;
+
+    }
+    .fas{
+        font-size: 3rem;
+        color: #2C51A0;
+    }
+    .star{
+        height: 60px;
+    }
+}
