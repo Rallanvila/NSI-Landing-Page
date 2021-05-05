@@ -4,73 +4,9 @@
 @import "settings";
 @import "grid";
 @import "header";
+@import "footer";
 
 
-// .header{
-//     position: relative;
-//     height: 630px;
-//     width: 100%;
-//     @include bgCover();
-//     background-image: url("https://images.pexels.com/photos/40753/military-raptor-jet-f-22-airplane-40753.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-//     .overlay{
-//         @include overlay(#000000, .5)
-//     }
-//     .nav{
-//         @include flexContainer(row, space-between, center);
-//         padding: 20px 30px;
-//         color: $white;
-//         .nav__links{
-//             z-index: 4;
-//             .fas{
-//                 color: white;
-//                 margin: 0 20px;
-//             }
-//             .nav__links--link{
-//                 color: $white;
-//                 margin: 0 20px;
-//                 padding-bottom: 5px;
-//                 border-bottom: 2px solid rgba($color: #fefefe, $alpha: 0);
-//                 transition: all .5s ease-in-out;
-//                 &:hover{
-//                     border-bottom: 2px solid white;
-
-//                 }
-//             }
-//             .contact-btn{
-//                 color: $white;
-//                 margin: 0 20px;
-//                 background: rgba($color: #fefefe, $alpha: 0.4);
-//                 padding: 10px 15px;
-//                 border-radius: 10px;
-//                 transition: all .4s ease-in-out;
-//                 &:hover{
-//                     background: darken($color: #161A22, $amount: 10%)
-//                 }
-                
-//             }
-//         }
-//     }
-
-// }
-// .values{
-//     @include flexContainer(center, center, center);
-//     padding: 20px 40px;
-//     border-bottom: 1px solid $color-bg;
-//     margin: 0 auto;
-//     max-width: 1200px;
-//     .values__img{
-//         height: 100px;
-//         padding: 0px 50px;
-
-//     }
-//     .fas{
-//         font-size: 3rem;
-//         color: #2C51A0;
-//     }
-//     .star{
-//         height: 60px;
-//     }
-// }
 .whyNSI{
     @include flexContainer(row, flex-start, center)
     width: 100%;
@@ -307,123 +243,21 @@
 
     }
 }
-.contact{
-    @include flexContainer(column, center, center);
-    padding: 50px 0;
-    background: rgba($color: #6B7DA7, $alpha: .1);
-    span, p{
-        opacity: .5;
-        text-align: center;
-    }
-    .contact__header{
-        color: #232a39;
-        padding: 30px 0 20px;
-    }
-    .contact__form{
-        margin-top: 50px;
-        max-width: 1200px;
-        min-width: 50%;
-        position: relative;
-        .contact__form-row{
-            width: 100%;
-            display: flex;
-            .contact__form-row--input{
-                width: 100%;
-                margin: 25px 0;
-                position: relative;
-                label{
-                    display: block;
-                    padding-bottom: 5px;
-                }
-                input, select{
-                    width: 90%;
-                    padding: 10px;
-                    border-radius: 5px;
-                    border: none;    
-                }
-            }
-            
+@media only screen and (max-width: 900px){
+    .whyNSI{
+        flex-direction: column;
+        margin: 50px auto;
+        height: unset;
+        .whyNSI__left{
+            @include flexContainer(column, center, center)
+            width: 90vw;
+            padding-bottom: 40px;
         }
-        .submit-btn{
-            margin-top: 25px;
-            width: unset;
-            padding: 15px 20px;
-            font-size: 1rem;
-            background: #161A22;
-            color: $white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all .3s ease-in-out;
-            &:hover{
-                background: lighten($color: #32363D, $amount: 10%)
-            }
-        }
-        a, p{
-            margin-top: 15px;
-            font-size: .8rem;
-            text-align: start;
-        }
-        a{
-            text-decoration: underline;
+        .whyNSI__right{
+            width: 80vw;
         }
     }
-}
-.footer{
-    @include flexContainer(column, center, center);
-    background: #161A22;
-    color: $white;
-    padding: 50px;
-    width: 100%;
-    .footer__top{   
-        position: relative;
-        width: 100%;
-        @include flexContainer(row, space-between, flex-start);
+    .mission{
         padding: 50px 0;
-        border-bottom: 1px solid rgba($color: #fefefe, $alpha: .3);
-        .footer__top--section{
-            width: 25%;
-            .footer__top--section-header{
-                font-weight: 600;
-                margin-bottom: 10px;
-                opacity: 1;
-            }
-            a{
-                display: block; 
-                color: $white;
-                opacity: .8;
-                font-weight: 300;
-                padding-bottom: 5px;
-            }
-            .footer__top--section--social{
-                .fab{
-                    color: $white;
-                    padding-right: 20px;
-                    font-size: 1.3rem;
-                    cursor: pointer;
-
-                }
-            }
-        }
-    }
-    .footer__middle{
-        width: 100%;
-        text-align: center;
-        position: relative;
-        padding: 30px 0;
-        border-bottom: 1px solid rgba($color: #fefefe, $alpha: .3);
-        p{
-            text-align: center;
-            opacity: .8;
-        }
-    }
-    .footer__bottom{
-        @include flexContainer(row, space-between, flex-start);
-        width: 100%;
-        padding: 30px 0;
-        p{
-            font-size: 0.8rem;
-            opacity: .5
-        }
     }
 }
