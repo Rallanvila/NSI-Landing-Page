@@ -259,7 +259,7 @@
     }
     .mission{
         padding: 50px 0;
-        margin-bottom: 150px;
+        margin-bottom: 70px;
     }
     .our-team{
         display: none;
@@ -268,9 +268,45 @@
     .careers{
         flex-direction: column;
         height: unset;
+        padding-right: 20px;
+        .careers__left{
+            width: 100%;
+            .careers__employee-relative-container{
+                .careers__employee-container{
+                    width: 314px;
+                    height: 125px;
+                    &.front{
+                        bottom: 72px;
+                        left: 46px;
+                    }
+                    .careers__employee-details--name{
+                        padding-bottom: 5px;
+                    }
+                    .careers__employee-details--location{
+                        display: none;
+                    }
+                    .careers__employee-details--title{
+                        display: none
+                    }
+                    .careers__employee-details--bubbles{
+                        .bubbles--green{
+                            width: 65px;
+                            height: 20px;
+                        }
+                        .bubbles--red{
+                            width: 145px;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+        }
         .careers__right{
             width: 100%;
             padding: 50px 20px;
+            .careers__right--header{
+                font-size: 2rem;
+            }
         }
     }
 }

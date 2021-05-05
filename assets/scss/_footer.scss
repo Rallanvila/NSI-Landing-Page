@@ -119,12 +119,19 @@
     }
 }
 @media only screen and (max-width: 700px){
+    .contact{
+        padding: 40px 15px;
+        .contact__header{
+            text-align: center;
+        }
+    }
     .footer{
         .footer__top{
             padding: 0;
             flex-direction: column;
             .footer__top--section{
                 padding: 20px 0;
+                width: 100%;
             }
         }
     }
