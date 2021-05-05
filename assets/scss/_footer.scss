@@ -134,5 +134,15 @@
                 width: 100%;
             }
         }
+        .footer__middle{
+            text-align: left;
+            @include flexContainer(row, flex-start, flex-start)
+        }
+        .footer__bottom{
+            flex-direction: column;
+            p{
+                padding-bottom: 20px;
+            }
+        }
     }
 }
