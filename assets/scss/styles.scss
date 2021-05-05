@@ -259,5 +259,19 @@
     }
     .mission{
         padding: 50px 0;
+        margin-bottom: 150px;
+    }
+    .our-team{
+        display: none;
+
+    }
+    .careers{
+        flex-direction: column;
+        height: unset;
+        .careers__right{
+            width: 100%;
+            padding: 50px 20px;
+        }
     }
 }
+
