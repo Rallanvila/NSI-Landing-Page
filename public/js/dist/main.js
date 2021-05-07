@@ -1,5 +1,41 @@
 (function(modules) {
+    function webpackJsonpCallback(data) {
+        var chunkIds = data[0];
+        var moreModules = data[1];
+        var executeModules = data[2];
+        var moduleId, chunkId, i = 0, resolves = [];
+        for (;i < chunkIds.length; i++) {
+            chunkId = chunkIds[i];
+            if (Object.prototype.hasOwnProperty.call(installedChunks, chunkId) && installedChunks[chunkId]) resolves.push(installedChunks[chunkId][0]);
+            installedChunks[chunkId] = 0;
+        }
+        for (moduleId in moreModules) if (Object.prototype.hasOwnProperty.call(moreModules, moduleId)) modules[moduleId] = moreModules[moduleId];
+        if (parentJsonpFunction) parentJsonpFunction(data);
+        while (resolves.length) resolves.shift()();
+        deferredModules.push.apply(deferredModules, executeModules || []);
+        return checkDeferredModules();
+    }
+    function checkDeferredModules() {
+        var result;
+        for (var i = 0; i < deferredModules.length; i++) {
+            var deferredModule = deferredModules[i];
+            var fulfilled = true;
+            for (var j = 1; j < deferredModule.length; j++) {
+                var depId = deferredModule[j];
+                if (0 !== installedChunks[depId]) fulfilled = false;
+            }
+            if (fulfilled) {
+                deferredModules.splice(i--, 1);
+                result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
+            }
+        }
+        return result;
+    }
     var installedModules = {};
+    var installedChunks = {
+        main: 0
+    };
+    var deferredModules = [];
     function __webpack_require__(moduleId) {
         if (installedModules[moduleId]) return installedModules[moduleId].exports;
         var module = installedModules[moduleId] = {
@@ -55,9 +91,16 @@
         return Object.prototype.hasOwnProperty.call(object, property);
     };
     __webpack_require__.p = "";
-    return __webpack_require__(__webpack_require__.s = "./assets/js/main.js");
+    var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
+    var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
+    jsonpArray.push = webpackJsonpCallback;
+    jsonpArray = jsonpArray.slice();
+    for (var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+    var parentJsonpFunction = oldJsonpFunction;
+    deferredModules.push([ "./assets/js/main.js", "vendors~main" ]);
+    return checkDeferredModules();
 })({
-    "./assets/js/main.js": function(module, exports) {
-        eval("if (navigator.serviceWorker) {\n  navigator.serviceWorker.register('/sw.js').then(function (registration) {// console.log(\n    // \t'ServiceWorker registration successful with scope:',\n    // \tregistration.scope\n    // );\n  }).catch(function (error) {\n    console.log('ServiceWorker registration failed:', error);\n  });\n}\n\n//# sourceURL=webpack:///./assets/js/main.js?");
+    "./assets/js/main.js": function(module, exports, __webpack_require__) {
+        eval("const {\n  default: gsap\n} = __webpack_require__(/*! gsap/gsap-core */ \"../node_modules/gsap/gsap-core.js\");\n\ngsap.from('.nav__links--link', {\n  duration: 10,\n  x: 500,\n  ease: 'back',\n  opacity: 0\n});\ngsap.to('.values', {\n  opacity: 0,\n  duration: 2,\n  x: -300,\n  ease: 'back'\n}); // if (navigator.serviceWorker) {\n// \tnavigator.serviceWorker\n// \t\t.register('/sw.js')\n// \t\t.then(function(registration) {\n// \t\t\t// console.log(\n// \t\t\t// \t'ServiceWorker registration successful with scope:',\n// \t\t\t// \tregistration.scope\n// \t\t\t// );\n// \t\t})\n// \t\t.catch(function(error) {\n// \t\t\tconsole.log('ServiceWorker registration failed:', error);\n// \t\t});\n// }\n\n//# sourceURL=webpack:///./assets/js/main.js?");
     }
 });
