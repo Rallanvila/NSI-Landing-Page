@@ -141,6 +141,8 @@
                 .careers__employee{
                     padding: 20px;
                     height: 100%;
+                    object-fit: cover;
+                    object-position: center;
                     border-radius: 28px;
                     z-index: 0;
                     &.front{
@@ -248,18 +250,20 @@
         flex-direction: column;
         margin: 50px auto;
         height: unset;
+        width: 100vw;
         .whyNSI__left{
             @include flexContainer(column, center, center)
-            width: 90vw;
+            width: 100vw;
             padding-bottom: 40px;
         }
         .whyNSI__right{
-            width: 80vw;
+            width: 90vw;
         }
     }
     .mission{
         padding: 50px 0;
         margin-bottom: 70px;
+        width: 100vw;
     }
     .our-team{
         display: none;
@@ -271,13 +275,22 @@
         padding-right: 20px;
         .careers__left{
             width: 100%;
+            @include flexContainer(column, flex-start, flex-start);
             .careers__employee-relative-container{
                 .careers__employee-container{
-                    width: 314px;
-                    height: 125px;
+                    width: 270px;
+                    height: 102px;
+                    margin-left: 34px;
                     &.front{
-                        bottom: 72px;
-                        left: 46px;
+                        bottom: 63px;
+                        left: 36px;
+                    }
+                    .careers__employee{
+                        padding: 13px;
+                        border-radius: 20px;
+                        &.front{
+
+                        }
                     }
                     .careers__employee-details--name{
                         padding-bottom: 5px;
@@ -288,14 +301,17 @@
                     .careers__employee-details--title{
                         display: none
                     }
+                    .careers__employee-details--review{
+                        font-size: 0.8rem;
+                    }
                     .careers__employee-details--bubbles{
                         .bubbles--green{
                             width: 65px;
-                            height: 20px;
+                            height: 12px;
                         }
                         .bubbles--red{
-                            width: 145px;
-                            height: 20px;
+                            width: 100px;
+                            height: 12px;
                         }
                     }
                 }
