@@ -15,6 +15,7 @@
     display: flex;
     height: 550px;
     max-width: 1300px;
+    overflow: hidden;
 
     .whyNSI__left{
         width: 50%;
@@ -94,20 +95,27 @@
             width: 50%;
         }
 
-        img{
+        .our-team__container--pic{
             width: 192px;
             height: 280px;
             padding: 7px;
             object-fit: cover;
             object-position: center;
+            &.big{
+                width: 388px;
+                height: 400px;
+            }
+            &.tall{
+                height: 400px;
+            }
         }
-        .our-team__container--pic-big{
-            width: 388px;
-            height: 400px;
-        }
-        .our-team__container--pic-tall{
-            height: 400px;
-        }
+        // .our-team__container--pic-big{
+        //     width: 388px;
+        //     height: 400px;
+        // }
+        // .our-team__container--pic-tall{
+        //     height: 400px;
+        // }
     }
 }
 .careers{

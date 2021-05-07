@@ -1,41 +1,5 @@
 (function(modules) {
-    function webpackJsonpCallback(data) {
-        var chunkIds = data[0];
-        var moreModules = data[1];
-        var executeModules = data[2];
-        var moduleId, chunkId, i = 0, resolves = [];
-        for (;i < chunkIds.length; i++) {
-            chunkId = chunkIds[i];
-            if (Object.prototype.hasOwnProperty.call(installedChunks, chunkId) && installedChunks[chunkId]) resolves.push(installedChunks[chunkId][0]);
-            installedChunks[chunkId] = 0;
-        }
-        for (moduleId in moreModules) if (Object.prototype.hasOwnProperty.call(moreModules, moduleId)) modules[moduleId] = moreModules[moduleId];
-        if (parentJsonpFunction) parentJsonpFunction(data);
-        while (resolves.length) resolves.shift()();
-        deferredModules.push.apply(deferredModules, executeModules || []);
-        return checkDeferredModules();
-    }
-    function checkDeferredModules() {
-        var result;
-        for (var i = 0; i < deferredModules.length; i++) {
-            var deferredModule = deferredModules[i];
-            var fulfilled = true;
-            for (var j = 1; j < deferredModule.length; j++) {
-                var depId = deferredModule[j];
-                if (0 !== installedChunks[depId]) fulfilled = false;
-            }
-            if (fulfilled) {
-                deferredModules.splice(i--, 1);
-                result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
-            }
-        }
-        return result;
-    }
     var installedModules = {};
-    var installedChunks = {
-        main: 0
-    };
-    var deferredModules = [];
     function __webpack_require__(moduleId) {
         if (installedModules[moduleId]) return installedModules[moduleId].exports;
         var module = installedModules[moduleId] = {
@@ -91,16 +55,9 @@
         return Object.prototype.hasOwnProperty.call(object, property);
     };
     __webpack_require__.p = "";
-    var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
-    var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
-    jsonpArray.push = webpackJsonpCallback;
-    jsonpArray = jsonpArray.slice();
-    for (var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
-    var parentJsonpFunction = oldJsonpFunction;
-    deferredModules.push([ "./assets/js/main.js", "vendors~main" ]);
-    return checkDeferredModules();
+    return __webpack_require__(__webpack_require__.s = "./assets/js/main.js");
 })({
-    "./assets/js/main.js": function(module, exports, __webpack_require__) {
-        eval("const {\n  default: gsap\n} = __webpack_require__(/*! gsap/gsap-core */ \"../node_modules/gsap/gsap-core.js\");\n\ngsap.from('.nav__links--link', {\n  duration: 10,\n  x: 500,\n  ease: 'back',\n  opacity: 0\n});\ngsap.to('.values', {\n  opacity: 0,\n  duration: 2,\n  x: -300,\n  ease: 'back'\n}); // if (navigator.serviceWorker) {\n// \tnavigator.serviceWorker\n// \t\t.register('/sw.js')\n// \t\t.then(function(registration) {\n// \t\t\t// console.log(\n// \t\t\t// \t'ServiceWorker registration successful with scope:',\n// \t\t\t// \tregistration.scope\n// \t\t\t// );\n// \t\t})\n// \t\t.catch(function(error) {\n// \t\t\tconsole.log('ServiceWorker registration failed:', error);\n// \t\t});\n// }\n\n//# sourceURL=webpack:///./assets/js/main.js?");
+    "./assets/js/main.js": function(module, exports) {
+        eval("// const { default: gsap } = require('gsap/gsap-core');\ngsap.from('.nav__links--link', {\n  ease: 'ease',\n  stagger: 0.4,\n  opacity: 0,\n  duration: 0.5\n});\ngsap.from('.whyNSI__left', {\n  duration: 2,\n  x: -800,\n  ease: 'power4',\n  scrollTrigger: {\n    trigger: '.whyNSI',\n    start: 'top center'\n  }\n});\ngsap.from('.whyNSI__right', {\n  duration: 1.5,\n  x: 800,\n  ease: 'power4',\n  scrollTrigger: {\n    trigger: '.whyNSI',\n    start: 'top center'\n  }\n});\ngsap.from('.mission', {\n  duration: 2,\n  opacity: 0,\n  scrollTrigger: {\n    trigger: '.mission',\n    start: 'top center'\n  }\n});\ngsap.from('.our-team__container--pic', {\n  duration: 1,\n  x: -1500,\n  y: -500,\n  stagger: 0.4,\n  scrollTrigger: {\n    trigger: '.our-team__container',\n    start: 'top center'\n  }\n});\ngsap.from('.careers__employee-container', {\n  duration: 1,\n  y: 200,\n  x: -100,\n  opacity: 0,\n  stagger: 0.5,\n  scrollTrigger: {\n    trigger: '.careers__employee-container',\n    start: 'top center'\n  }\n});\ngsap.from('.careers__right', {\n  duration: 3,\n  opacity: 0,\n  scrollTrigger: {\n    trigger: '.careers__employee-container',\n    start: 'top center',\n    delay: 2.5\n  }\n});\ngsap.from('.contact__form', {\n  duration: 3,\n  opacity: 0,\n  scrollTrigger: {\n    trigger: '.contact__form',\n    start: 'top center'\n  }\n}); // if (navigator.serviceWorker) {\n// \tnavigator.serviceWorker\n// \t\t.register('/sw.js')\n// \t\t.then(function(registration) {\n// \t\t\t// console.log(\n// \t\t\t// \t'ServiceWorker registration successful with scope:',\n// \t\t\t// \tregistration.scope\n// \t\t\t// );\n// \t\t})\n// \t\t.catch(function(error) {\n// \t\t\tconsole.log('ServiceWorker registration failed:', error);\n// \t\t});\n// }\n\n//# sourceURL=webpack:///./assets/js/main.js?");
     }
 });
