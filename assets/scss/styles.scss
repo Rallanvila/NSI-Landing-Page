@@ -277,10 +277,13 @@
             width: 100%;
             @include flexContainer(column, flex-start, flex-start);
             .careers__employee-relative-container{
+                align-self: center;
                 .careers__employee-container{
-                    width: 270px;
+                    width: 80vw;
                     height: 102px;
-                    margin-left: 34px;
+                    // width: 270px;
+                    // height: 102px;
+                    margin: 0 auto;
                     &.front{
                         bottom: 63px;
                         left: 36px;
